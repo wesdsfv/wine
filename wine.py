@@ -10,9 +10,11 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 
 # Construct the full path to the model file
 model_path = os.path.join(dir_path, 'kmeans_wine_clustering.joblib')
+scaler_path = "scaler_model.joblib"  # Correct the path for your scaler
 
 # Load the KMeans model
 model = joblib.load(model_path)
+scaler = joblib.load(scaler_path)  # Ensure the scaler is loaded
 
 # Streamlit title and description
 st.title("Wine Cluster Prediction")
