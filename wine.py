@@ -5,9 +5,13 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
 import os
 
-# Load the trained KMeans model and the scaler
-# Note: Adjust the paths accordingly to where your model and scaler are saved
-model_path = "./main/kmeans_wine_clustering.joblib"
+# Get the directory where this script is located
+dir_path = os.path.dirname(os.path.realpath(__file__))
+
+# Construct the full path to the model file
+model_path = os.path.join(dir_path, 'kmeans_wine_clustering.joblib')
+
+# Load the KMeans model
 model = joblib.load(model_path)
 
 # Streamlit title and description
