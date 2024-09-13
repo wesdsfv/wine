@@ -7,7 +7,7 @@ import os
 
 # Load the trained KMeans model and the scaler
 # Note: Adjust the paths accordingly to where your model and scaler are saved
-model_path = "./wine/kmeans_wine_clustering.joblib"
+model_path = "./main/kmeans_wine_clustering.joblib"
 model = joblib.load(model_path)
 
 # Streamlit title and description
