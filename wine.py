@@ -21,8 +21,14 @@ st.title("Wine Cluster Prediction")
 st.write("Discover what type of wine you might prefer based on alcohol content and color intensity.")
 
 # User input for alcohol content and color intensity
-alcohol_content = st.number_input("Enter the alcohol content (typical range: 11-15):", min_value=11.0, max_value=15.0, step=0.1)
-color_intensity = st.number_input("Enter the color intensity (typical range: 1-13):", min_value=1.0, max_value=13.0, step=0.1)
+alcohol_content = st.number_input("Enter the alcohol content:", value=12.0, step=0.1)
+color_intensity = st.number_input("Enter the color intensity:", value=5.0, step=0.1)
+
+# Provide warnings if the user inputs values outside typical ranges
+if alcohol_content < 11.0 or alcohol_content > 15.0:
+    st.warning("Warning: Alcohol content is typically between 11 and 15.")
+if color_intensity < 1.0 or color_intensity > 13.0:
+    st.warning("Warning: Color intensity is typically between 1 and 13.")
 
 # Create an input array with the user data
 input_array = np.array([[alcohol_content, color_intensity]])
